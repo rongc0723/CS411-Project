@@ -1,1 +1,25 @@
+project idea #1
+description: recommend spotify playlist given the culture behind recipe (chinese food -> chinese songs, italian food -> italian music, etc)
+
+API’s 1: recipe (spoonacular)
+API’s 2: spotify api
+OAuth: gmail
+decoupled architecture
+framework: react 
+database: firebase/Mongo
+front-end: react
+back-end: javascript
+
+
+project idea #2
+description: generate x miles route for running and recommend healthy meal plan for the day
+
+API’s 1: google maps
+API’s 2: recipe   (spoonacular)
+OAuth:gmail facebook don't matter
+decoupled architecture
+framework: react
+database: firebase/mongo/mySQL
+front-end: react
+back-end: Node.js
 

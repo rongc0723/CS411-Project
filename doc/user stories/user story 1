@@ -1,0 +1,8 @@
+user story 1 (login)
+“As a user, I want to log in with my gmail account to use this web app.”
+
+everything goes right:
+Users will open the app with a login page to log in through their Gmail account and create their profile.
+
+something goes wrong:
+Something will pop up like “not valid email address,” or "something went wrong, and you’re unable to login.”

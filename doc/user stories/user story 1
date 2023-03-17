@@ -1,8 +1,7 @@
 user story 1 (login)
-“As a user, I want to log in with my gmail account to use this web app.”
-
-everything goes right:
-Users will open the app with a login page to log in through their Gmail account and create their profile.
-
-something goes wrong:
-Something will pop up like “not valid email address,” or "something went wrong, and you’re unable to login.”
+As a user, I would like to have the option to log in to this web application using my Gmail account so that I can easily access the platform 
+without having to remember another username and password. This feature would also allow me to sign in to the platform quickly and securely, 
+as I trust Gmail's security measures to safeguard my personal information. If everything goes well, users will be directed to a login page where 
+they can enter their email address and password to log in through their Gmail account and create their profile. If something goes wrong, 
+such as the user entering an invalid email address or an incorrect password, a pop-up box will appear stating "invalid email address" 
+or "unable to login." This way, users cannot log in to their Gmail account from the web app.

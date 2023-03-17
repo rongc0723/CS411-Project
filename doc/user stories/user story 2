@@ -1,8 +1,7 @@
-user story 2 (search for cuisine)
-“As a logged-in user, I want to search for different types of cuisine with its recipe.”
-
-everything goes right:
-Users will type in the style of cuisine they would like to make like “Spanish, Indian, Greek, etc.” And the app will list a couple of cuisines in the desired type with its recipe.
-
-something goes wrong:
-The app could not find the type of cuisine and will not provide recipes the users want.
+user story 2 (search for recipe)
+As a logged-in user of this recipe platform, I want to be able to search for recipes based on a specific cuisine keyword so that I can easily find dishes 
+that match my preferences and cooking style. This feature would save me time by narrowing down the search results to only those that match my desired 
+cuisine, rather than having to scroll through endless recipe options. If everything goes smoothly, the user can simply type in a cuisine keyword such as 
+"Spanish" or "Indian," and the app will return a list of recipes that are curated towards that cuisine. However, if something goes wrong, 
+such as the app not being able to find any recipes related to the user's input, an error message will appear suggesting the user to try another word. 
+If there is an issue with the database, the app will not generate the corresponding recipes for the user.

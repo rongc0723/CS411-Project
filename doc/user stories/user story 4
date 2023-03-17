@@ -1,0 +1,8 @@
+user story 4 (favorite page)
+As a logged-in user, I would like to be able to mark a recipe or playlist as a favorite so that I can easily access it later. Additionally, 
+I would like to display my favorite recipes and playlists on my user profile for quick reference. When browsing recipes or playlists, I should be able 
+to click a "Favorite" button to add the item to my favorites list. The item should then be saved to my user profile, allowing me to access it later 
+by clicking on the "Favorites" tab on my user profile page. If everything goes well, I will be able to view a list of all my favorite recipes and playlists
+in my favorites collection, with the option to remove any items that I no longer wish to keep. If something goes wrong, such as the failure to add items 
+to my favorites when I click the button, the feature will not work properly. Overall, this feature will simplify the process of keeping track of the 
+recipes and playlists I love, and will enhance my user experience by providing a personalized touch.

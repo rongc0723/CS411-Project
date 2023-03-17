@@ -1,8 +1,8 @@
 user story 3 (generate music list)
-“As a logged-in user, I want to listen to some music while I'm cooking.”
-
-everything goes right:
-The app will generate a music list from Spotify that corresponds to the style of cuisine like songs in Spanish or by Spanish singers if the users are looking for Spanish cuisine.
-
-something goes wrong:
-The music list is not corresponding to the types of cuisine.
+As a logged-in user of this recipe platform, I would like the option to have a Spotify playlist tailored to the cuisine of the recipe I am following, 
+in order to fully immerse myself in the culinary experience. This feature would provide seamless integration between my cooking and music preferences, 
+creating a more enjoyable and personalized experience. With the ability to listen to music that matches the cuisine of my recipe, I can fully appreciate 
+the dish's cultural and historical context. Overall, having a Spotify playlist related to the cuisine of the recipe I am following would enhance my user 
+experience and make cooking with this platform more engaging and fun. If everything goes as planned, the app will generate a music playlist from Spotify 
+that matches the users' preferences, such as songs in Spanish or by Spanish singers if they are searching for a Spanish cuisine. If something goes wrong, 
+there won't be any music on the playlist or the playlist may not match the cuisine of the recipe selected.

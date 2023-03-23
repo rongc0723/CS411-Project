@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import {
   BrowserRouter,
@@ -21,9 +20,7 @@ function App() {
           <Routes>
             <Route exact path='/' element={<SearchBar/>} />
 
-            <Route exact path='/result'>
-              {[<MusicList/>,<RecipeList/>]}
-            </Route>
+            <Route exact path='/result' element={[<MusicList/>,<RecipeList/>]}/>
 
             <Route exact path='/Profile' element={<Profile/>} />
             <Route exact path='/LoginPage' element={<LoginPage/>} />

@@ -6,11 +6,11 @@ import {
 } from "react-router-dom";
 import MusicList from './components/MusicList/MusicList';
 import Navbar from './components/Navbar/Navbar';
-import Profile from './components/Profile/Profile';
+import Profile from './pages/Profile/Profile';
 import RecipeList from './components/RecipeList/RecipeList';
 // import SearchBar from './components/SearchBar/SearchBar'
-import LoginPage from './components/Login/LoginPage';
-import MainPage from './components/MainPage/MainPage';
+import LoginPage from './pages/Login/LoginPage';
+import MainPage from './pages/MainPage/MainPage';
 
 function App() {
   return (

@@ -8,7 +8,6 @@ export default function Navbar() {
     <div className='navbar'>
         <nav>
             <NavLink className='brand' to='/'>
-                <h1>Sfoodify</h1>
             </NavLink>
         </nav>
     </div>

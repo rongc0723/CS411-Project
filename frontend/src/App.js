@@ -1,3 +1,4 @@
+import logo from "./logo.png";
 import './App.css';
 import {
   BrowserRouter,
@@ -18,13 +19,15 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <header className='App-header'>
+        <img src={logo} className="App-logo" alt="logo" />
           <Routes>
+            <Route exact path='/LoginPage' element={<LoginPage/>} />
             <Route exact path='/' element={<MainPage/>} />
 
             <Route exact path='/result' element={[<MusicList/>,<RecipeList/>]}/>
 
             <Route exact path='/Profile' element={<Profile/>} />
-            <Route exact path='/LoginPage' element={<LoginPage/>} />
+            
 
           </Routes>
         </header>

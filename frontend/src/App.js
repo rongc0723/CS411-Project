@@ -10,11 +10,13 @@ import Profile from './components/Profile/Profile';
 import RecipeList from './components/RecipeList/RecipeList';
 import SearchBar from './components/SearchBar/SearchBar'
 import LoginPage from './components/Login/LoginPage';
+import MainPage from './components/MainPage/MainPage';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <MainPage />
         <Navbar />
         <header className='App-header'>
           <Routes>

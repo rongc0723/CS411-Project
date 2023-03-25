@@ -16,10 +16,13 @@ import MainPage from './pages/MainPage/MainPage';
 function App() {
   return (
     <div className="App">
+      
       <BrowserRouter>
         <Navbar />
         <header className='App-header'>
         <img src={logo} className="App-logo" alt="logo" />
+        <style>{'body { background-color: #F6F6F6; }'}</style>
+        <button className="btn">Login With Google</button>
           <Routes>
             <Route exact path='/LoginPage' element={<LoginPage/>} />
             <Route exact path='/' element={<MainPage/>} />

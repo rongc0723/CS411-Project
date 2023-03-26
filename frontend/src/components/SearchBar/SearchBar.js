@@ -7,7 +7,7 @@ const API_KEY = '2f0beac2f4c1420c816e7632d8657317';
 const API_ENDPOINT = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}`;
 
 const ALGOLIA_APP_ID = 'SOPA4AOQCK';
-const ALGOLIA_API_KEY = '50577af5b0f6336ae0a79fb2cc92d77b';
+const ALGOLIA_API_KEY = '5445d5dff0b7a8aed46c474cb958af6c';
 const ALGOLIA_INDEX_NAME = '411GP-Sfoodify';
 
 fetch(API_ENDPOINT)
@@ -18,12 +18,11 @@ fetch(API_ENDPOINT)
         objectID: result.id.toString(),
         name: result.title,
         imageUrl: result.image,
-        ingredients: result.extendedIngredients.map((ingredient) => ingredient.originalString),
         instructions: result.instructions,
         cuisine: result.cuisines,
       };
     });
-
+    console.log(records);
     const client = algoliasearch(ALGOLIA_APP_ID,ALGOLIA_API_KEY);
     const index = client.initIndex(ALGOLIA_INDEX_NAME);
 

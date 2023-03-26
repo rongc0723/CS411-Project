@@ -10,6 +10,18 @@ const ALGOLIA_APP_ID = 'SOPA4AOQCK';
 const ALGOLIA_API_KEY = '50577af5b0f6336ae0a79fb2cc92d77b';
 const ALGOLIA_INDEX_NAME = '411GP-Sfoodify';
 
+function SearchBar() {
+  
+  return (
+    <form classname="searchbar">
+      <label>Search for recipe: 
+        <br></br>
+        <input type="text" placeholder={"eg.Spanish"} />
+      </label>
+    </form>
+  )
+}
+
 fetch(API_ENDPOINT)
   .then((response) => response.json())
   .then(async (data) => {
@@ -40,8 +52,4 @@ fetch(API_ENDPOINT)
     console.error(error);
   });
 
-export default function SearchBar() {
-  return (
-    <div>SearchBar</div>
-  )
-}
+export default SearchBar

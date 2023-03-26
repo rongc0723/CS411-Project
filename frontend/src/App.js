@@ -22,6 +22,7 @@ function App() {
         <SearchBar />
         <header className='App-header'>
         <img src={logo} className="App-logo" alt="logo" />
+        <br></br>
         <style>{'body { background-color: #F6F6F6; }'}</style>
         <button className="btn">Login With Google</button>
           <Routes>

@@ -1,28 +1,15 @@
 import React, { useState } from 'react';
 
-const API_KEY = 'Uj6WDsp+DrugXlQzSWBPFQ==QTr5rhmcz5CqGc40';
-const axios = require('axios').default;
+const API_KEY = '2f0beac2f4c1420c816e7632d8657317';
+const fetch = require('node-fetch');
 
 const SearchBar = () => {
   const [query, setQuery] = useState('');
   const [recipes, setRecipes] = useState([]);
 
   const searchRecipes = async () => {
-    const options = {
-      method: 'get',
-      url: 'https://recipe-by-api-ninjas.p.rapidapi.com/v1/recipe',
-      params: {query},
-      headers: {
-        'X-RapidAPI-Key': '4aaf0cdf01msh0131c5e263100f2p1c390fjsnadfd05903d78',
-        'X-RapidAPI-Host': 'recipe-by-api-ninjas.p.rapidapi.com'
-      }
-    };
-    await axios.request(options).then(function (response) {
-      console.log(response.data);
-      setRecipes(response.data);
-    }).catch(function (error) {
-      console.error(error);
-  });
+    const response = await fetch(`https://api.spoonacular.com/recipes/search?apiKey=${API_KEY}&query=${query}`);
+    setRecipes(response.data.results);
   }
 
   const handleChange = (event) => {

@@ -1,46 +1,52 @@
-import React from 'react'
-import algoliasearch from 'algoliasearch';
+import React, { useState } from 'react';
 
-const fetch = require('node-fetch');
+const API_KEY = 'Uj6WDsp+DrugXlQzSWBPFQ==QTr5rhmcz5CqGc40';
+const axios = require('axios').default;
 
-const API_KEY = '2f0beac2f4c1420c816e7632d8657317';
-const API_ENDPOINT = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}`;
+const SearchBar = () => {
+  const [query, setQuery] = useState('');
+  const [recipes, setRecipes] = useState([]);
 
-const ALGOLIA_APP_ID = 'SOPA4AOQCK';
-const ALGOLIA_API_KEY = '5445d5dff0b7a8aed46c474cb958af6c';
-const ALGOLIA_INDEX_NAME = '411GP-Sfoodify';
-
-fetch(API_ENDPOINT)
-  .then((response) => response.json())
-  .then(async (data) => {
-    const records = data.results.map((result) => {
-      return {
-        objectID: result.id.toString(),
-        name: result.title,
-        imageUrl: result.image,
-        instructions: result.instructions,
-        cuisine: result.cuisines,
-      };
-    });
-    console.log(records);
-    const client = algoliasearch(ALGOLIA_APP_ID,ALGOLIA_API_KEY);
-    const index = client.initIndex(ALGOLIA_INDEX_NAME);
-
-    for (let i = 0; i < records.length; i += 100) {
-      const batch = records.slice(i, i + 100);
-      try {
-        await index.saveObjects(batch, { autoGenerateObjectIDIfNotExist: true });
-      } catch (error) {
-        console.error(error);
+  const searchRecipes = async () => {
+    const options = {
+      method: 'get',
+      url: 'https://recipe-by-api-ninjas.p.rapidapi.com/v1/recipe',
+      params: {query},
+      headers: {
+        'X-RapidAPI-Key': '4aaf0cdf01msh0131c5e263100f2p1c390fjsnadfd05903d78',
+        'X-RapidAPI-Host': 'recipe-by-api-ninjas.p.rapidapi.com'
       }
-    }
-  })
-  .catch((error) => {
-    console.error(error);
+    };
+    await axios.request(options).then(function (response) {
+      console.log(response.data);
+      setRecipes(response.data);
+    }).catch(function (error) {
+      console.error(error);
   });
+  }
 
-export default function SearchBar() {
+  const handleChange = (event) => {
+    setQuery(event.target.value);
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    searchRecipes();
+  }
+
   return (
-    <div>SearchBar</div>
-  )
-}
+    <div>
+      <form onSubmit={handleSubmit}>
+        <input type="text" value={query} onChange={handleChange} placeholder="Search for a recipe" />
+        <button type="submit">Search</button>
+      </form>
+      <ul>
+        {recipes.map(recipe => (
+          <li key={recipe.id}>{recipe.title}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default SearchBar;

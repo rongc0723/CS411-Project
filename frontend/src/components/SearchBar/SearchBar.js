@@ -3,6 +3,9 @@ import './SearchBar.css';
 import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup'
 import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card'
+import ListGroup from 'react-bootstrap/ListGroup'
+import CardGroup from 'react-bootstrap/CardGroup'
 
 const API_KEY = '2f0beac2f4c1420c816e7632d8657317';
 const fetch = require('node-fetch');
@@ -40,16 +43,34 @@ const SearchBar = () => {
           placeholder="eg. Chinese"
           aria-label="Recipe"
           aria-describedby="basic-addon1"
+          value={query} 
+          onChange={handleChange} 
         />
       </InputGroup>
         <Button variant='primary' className="search-box" type="submit">Search</Button>
         <div className='search-box'></div>
       </form>
-      <ul>
-        {recipes.map(recipe => (
-          <li key={recipe.id}>{recipe.title}</li>
-        ))}
-      </ul>
+      <br></br>
+      <div>
+      <CardGroup>
+      <Card style={{width: '18rem'}}>
+        <ListGroup variant='flush'>
+          {recipes.slice(0,5).map(recipe => (
+            <ListGroup.Item key={recipe.id}>{recipe.title}</ListGroup.Item>
+          ))}          
+        </ListGroup>
+      </Card>  
+      <Card>
+        <ListGroup variant='flush'>
+          {recipes.slice(5).map(recipe => (
+            <ListGroup.Item key={recipe.id}>{recipe.title}</ListGroup.Item>
+          ))}          
+        </ListGroup>        
+      </Card>        
+      </CardGroup>
+       
+      </div>
+
     </div>
   );
 };

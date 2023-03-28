@@ -1,0 +1,26 @@
+.App-logo {
+    height: auto;
+    max-width: 100%;
+  }
+  
+  .btn {
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    max-width: 420px;
+    outline: 0;
+    padding: 10px 0;
+    transition: background 0.3s;
+    width: 80%;
+    background: black;
+    margin-top: 5%;
+  }
+  
+  .btn:hover {
+    background: #3E54AC;
+  }

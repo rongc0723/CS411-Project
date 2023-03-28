@@ -22,10 +22,10 @@ const SearchBar = () => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={query} onChange={handleChange} placeholder="Search for a recipe" />
-        <button type="submit">Search</button>
+    <div classname="container">
+      <form onSubmit={handleSubmit} class="search-bar">
+        <input type="text" value={query} onChange={handleChange} placeholder="eg.Spanish" />
+        <button classname="search-box"type="submit">Search</button>
       </form>
       <ul>
         {recipes.map(recipe => (

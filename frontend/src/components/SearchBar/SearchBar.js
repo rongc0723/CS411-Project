@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './SearchBar.css';
 
 const API_KEY = '2f0beac2f4c1420c816e7632d8657317';
 const fetch = require('node-fetch');
@@ -8,8 +9,14 @@ const SearchBar = () => {
   const [recipes, setRecipes] = useState([]);
 
   const searchRecipes = async () => {
-    const response = await fetch(`https://api.spoonacular.com/recipes/search?apiKey=${API_KEY}&query=${query}`);
-    setRecipes(response.data.results);
+    await fetch(`https://api.spoonacular.com/recipes/search?apiKey=${API_KEY}&query=${query}`)
+    .then(response=>response.json())
+    .then(data=>{
+      console.log(data);
+      setRecipes(data.results);
+    })
+    
+    
   }
 
   const handleChange = (event) => {

@@ -19,7 +19,6 @@ function App() {
       
       <BrowserRouter>
         <Navbar />
-        <SearchBar />
         <header className='App-header'>
         <img src={logo} className="App-logo" alt="logo" />
         <br></br>

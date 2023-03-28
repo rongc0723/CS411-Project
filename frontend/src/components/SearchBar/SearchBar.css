@@ -1,6 +1,23 @@
  input {
+    
     box-sizing: content-box;
     border-radius: 1rem;
+}
+ .search-box {
+    color:white !important;
+    font-family: Comic Sans MS !important;
+    font-size:large !important;
+    background: linear-gradient(45deg,#146542, #000000,#FF8000) !important;
+    border-color: white !important;
+    transition: background 0.5s ease-in-out !important;
+ }
+
+ .search-box:hover {
+    background: #9198e5 !important;
+ }
+ 
+ ul{
+
 }
 
  li {

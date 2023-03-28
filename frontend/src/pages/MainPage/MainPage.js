@@ -1,5 +1,7 @@
 import React from 'react'
 import SearchBar from '../../components/SearchBar/SearchBar'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 export default function MainPage() {
   return (
     <div className="main-page">

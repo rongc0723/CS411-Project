@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import './SearchBar.css';
+import Form from 'react-bootstrap/Form'
+import InputGroup from 'react-bootstrap/InputGroup'
+import Button from 'react-bootstrap/Button'
 
 const API_KEY = '2f0beac2f4c1420c816e7632d8657317';
 const fetch = require('node-fetch');
@@ -29,10 +32,18 @@ const SearchBar = () => {
   }
 
   return (
-    <div classname="container">
-      <form onSubmit={handleSubmit} class="search-bar">
-        <input type="text" value={query} onChange={handleChange} placeholder="eg.Spanish" />
-        <button classname="search-box"type="submit">Search</button>
+    <div className="container">
+      <form onSubmit={handleSubmit}>
+      <InputGroup className="mb-3">
+        <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
+        <Form.Control
+          placeholder="eg. Chinese"
+          aria-label="Recipe"
+          aria-describedby="basic-addon1"
+        />
+      </InputGroup>
+        <Button variant='primary' className="search-box" type="submit">Search</Button>
+        <div className='search-box'></div>
       </form>
       <ul>
         {recipes.map(recipe => (

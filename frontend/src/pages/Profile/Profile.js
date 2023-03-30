@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import './Profile.css'
+import { UserAuth } from '../../context/AuthContext';
+import { useNavigate } from "react-router-dom";
 
 function ProfilePage() {
   const [favorites, setFavorites] = useState([
@@ -7,6 +9,16 @@ function ProfilePage() {
     "Favorite Item 2",
     "Favorite Item 3"
   ]);
+
+  const {user} = UserAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user === null){
+      navigate('/')
+    }
+  }, [navigate, user])
+  
 
   const handleRemoveFavorite = (index) => {
     const newFavorites = [...favorites];

@@ -7,12 +7,12 @@
     color:white !important;
     font-family: Comic Sans MS !important;
     font-size:large !important;
-    background: linear-gradient(45deg,#146542, #000000,#FF8000) !important;
+    background: #A9907E !important;
     border-color: white !important;
-    transition: background 0.5s ease-in-out !important;
+    transition: background 0.3s ease-in-out !important;
+    margin-top: 0%;
  }
 
  .search-box:hover {
-    background: #FF8000 !important;
+    background: #675D50 !important;
  }
- 

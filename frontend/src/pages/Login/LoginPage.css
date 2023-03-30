@@ -5,8 +5,8 @@
   
   .btn {
     border-radius: 5px;
-    border: none;
-    color: #fff;
+    border-color: #F3DEBA !important;
+    color: white !important;
     cursor: pointer;
     font-family: 'Open Sans', sans-serif;
     font-size: 18px;
@@ -17,10 +17,11 @@
     padding: 10px 0;
     transition: background 0.3s;
     width: 80%;
-    background: black;
+    background: #A9907E !important;
     margin-top: 5%;
   }
   
   .btn:hover {
-    background: #3E54AC;
+    background: #675D50 !important;
+    color: white !important;
   }

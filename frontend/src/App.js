@@ -10,26 +10,23 @@ import Profile from './pages/Profile/Profile';
 import RecipeList from './components/RecipeList/RecipeList';
 import LoginPage from './pages/Login/LoginPage';
 import MainPage from './pages/MainPage/MainPage';
+import { AuthContextProvider } from './context/AuthContext';
 
 
 function App() {
   return (
     <div className="App">
-      
+      <AuthContextProvider>
       <BrowserRouter>
         <Navbar />
-        <header className='App-header'>
-       
           <Routes>
             <Route path="/" element={<LoginPage />} />
             <Route path="/MainPage" element={<MainPage />} />
             <Route path="/result" element={[<MusicList/>,<RecipeList/>]} />
             <Route path="/Profile" element={<Profile />} />
-            
-
           </Routes>
-        </header>
       </BrowserRouter>
+      </AuthContextProvider>
     </div>
   );
 }

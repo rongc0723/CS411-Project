@@ -5,7 +5,7 @@
     line-height: 1.2;
     word-break: break-word;
     font-size: 50px;
-    font-style: italic;
+    padding: 2%;
 }
 
 h3 {
@@ -15,4 +15,5 @@ h3 {
     line-height: 1.2;
     word-break: break-word;;
     font-style: italic;
+    padding: 1%;
 }

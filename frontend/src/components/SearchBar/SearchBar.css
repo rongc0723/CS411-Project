@@ -7,6 +7,7 @@
     color:white !important;
     font-family: Comic Sans MS !important;
     font-size:large !important;
+    font-style: italic !important;
     background: linear-gradient(45deg,#146542, #000000,#FF8000) !important;
     border-color: white !important;
     transition: background 0.5s ease-in-out !important;
@@ -16,3 +17,6 @@
     background: #FF8000 !important;
  }
  
+ .search-result:hover {
+    background: #FF8000 !important;
+ }

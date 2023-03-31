@@ -6,6 +6,8 @@ import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import ListGroup from 'react-bootstrap/ListGroup'
 import CardGroup from 'react-bootstrap/CardGroup'
+import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const API_KEY = '2f0beac2f4c1420c816e7632d8657317';
 const fetch = require('node-fetch');
@@ -13,6 +15,7 @@ const fetch = require('node-fetch');
 const SearchBar = () => {
   const [query, setQuery] = useState('');
   const [recipes, setRecipes] = useState([]);
+  const navigate = useNavigate();
 
   const searchRecipes = async () => {
     await fetch(`https://api.spoonacular.com/recipes/search?apiKey=${API_KEY}&query=${query}`)
@@ -21,8 +24,6 @@ const SearchBar = () => {
       console.log(data);
       setRecipes(data.results);
     })
-    
-    
   }
 
   const handleChange = (event) => {
@@ -34,11 +35,15 @@ const SearchBar = () => {
     searchRecipes();
   }
 
+  const handleOnclick = (keyId) => {
+    navigate(`/result?key=${keyId}`);
+  }
+
   return (
     <div className="container">
       <form onSubmit={handleSubmit}>
       <InputGroup className="mb-3">
-        <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
+        <InputGroup.Text id="basic-addon1">》</InputGroup.Text>
         <Form.Control
           placeholder="eg. Chinese"
           aria-label="Recipe"
@@ -53,17 +58,17 @@ const SearchBar = () => {
       <br></br>
       <div>
       <CardGroup>
-      <Card style={{width: '18rem'}}>
+      <Card style={{width: '28rem'}}>
         <ListGroup variant='flush'>
           {recipes.slice(0,5).map(recipe => (
-            <ListGroup.Item key={recipe.id}>{recipe.title}</ListGroup.Item>
+            <ListGroup.Item key={recipe.id} className='search-result' onClick={() => handleOnclick(recipe.id)}>{recipe.title}</ListGroup.Item>
           ))}          
         </ListGroup>
       </Card>  
-      <Card>
+      <Card style={{width: '28rem'}}>
         <ListGroup variant='flush'>
           {recipes.slice(5).map(recipe => (
-            <ListGroup.Item key={recipe.id}>{recipe.title}</ListGroup.Item>
+            <ListGroup.Item key={recipe.id} className='search-result' onClick={() => handleOnclick(recipe.id)}>{recipe.title}</ListGroup.Item>
           ))}          
         </ListGroup>        
       </Card>        

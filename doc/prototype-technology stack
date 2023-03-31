@@ -1,0 +1,6 @@
+react: We use react.js as our framework because it has packages and tools that make coding easier. And the component function helps to organize 
+reusable components that can be applied to different pages. We would like to learn a new language when deciding which stack to use, and react.js 
+became our final choice because it’s commonly used for web development, and there are plenty of resources to learn from. We are using Node.js as our 
+backend because we are all familiar with javascript and Node.js allows us to easily fetch data from API calls. 
+firebase: We are using firebase as our database because firebase handles user authentication and authorization for us without needing to write a 
+lot of backend code. It’s easy to use and saves time when processing the user information.

@@ -6,7 +6,6 @@ import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import ListGroup from 'react-bootstrap/ListGroup'
 import CardGroup from 'react-bootstrap/CardGroup'
-import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
 const API_KEY = '2f0beac2f4c1420c816e7632d8657317';
@@ -18,7 +17,7 @@ const SearchBar = () => {
   const navigate = useNavigate();
 
   const searchRecipes = async () => {
-    await fetch(`https://api.spoonacular.com/recipes/search?apiKey=${API_KEY}&query=${query}`)
+    await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&query=${query}&addRecipeInformation=true`)
     .then(response=>response.json())
     .then(data=>{
       console.log(data);
@@ -36,7 +35,10 @@ const SearchBar = () => {
   }
 
   const handleOnclick = (keyId) => {
-    navigate(`/result?key=${keyId}`);
+    const userSelect = recipes.find(item => item.id === keyId);
+    const urlParams = new URLSearchParams();
+    urlParams.append('obj', JSON.stringify(userSelect));
+    navigate(`/result?obj=${urlParams}`);
   }
 
   return (

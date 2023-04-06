@@ -1,18 +1,31 @@
 import React from 'react';
 import { useState } from 'react';
-import Form from 'react-bootstrap/Form'
-import InputGroup from 'react-bootstrap/InputGroup'
+import Accordion from 'react-bootstrap/Accordion'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
-import ListGroup from 'react-bootstrap/ListGroup'
 import CardGroup from 'react-bootstrap/CardGroup'
 
-const urlParams = new URLSearchParams(window.location.search);
-const objString = urlParams.get('obj');
-const userSelect = JSON.parse(objString);
+const RecipeList = () =>{
+  const urlParams = new URLSearchParams(window.location.search);
+  const objString = urlParams.get('obj');
+  const selectedDish= JSON.parse(objString.slice(4));
+  console.log(selectedDish);
 
-export default function RecipeList() {
   return (
-    <div>RecipeList</div>
+    <Card style={{width: '36rem'}}>
+      <Card.Img variant='top' src={selectedDish.image} sizes='(max-width: 710px) 120px,(max-width: 991px) 193px,278px'></Card.Img>
+      <Card.Body>
+        <Card.Title>
+          {selectedDish.title}
+        </Card.Title>
+      </Card.Body>
+      <Card.Text>
+        Culture: {selectedDish.cuisines[0]}.
+        {selectedDish.summary}
+      </Card.Text>
+    </Card>
   )
 }
+
+
+export default RecipeList;

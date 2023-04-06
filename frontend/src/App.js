@@ -22,7 +22,7 @@ function App() {
           <Routes>
             <Route path="/" element={<LoginPage />} />
             <Route path="/MainPage" element={<MainPage />} />
-            <Route path="/result" element={[<MusicList/>,<RecipeList/>]} />
+            <Route path="/result" element={[<RecipeList/>,<MusicList/>]} />
             <Route path="/Profile" element={<Profile />} />
           </Routes>
       </BrowserRouter>

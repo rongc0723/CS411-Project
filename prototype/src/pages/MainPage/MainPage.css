@@ -1,0 +1,19 @@
+ h1 {
+    color: #0e0a1b;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 900;
+    line-height: 1.2;
+    word-break: break-word;
+    font-size: 50px;
+    padding: 2%;
+}
+
+h3 {
+    color: #0e0a1b;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 900;
+    line-height: 1.2;
+    word-break: break-word;;
+    font-style: italic;
+    padding: 1%;
+}

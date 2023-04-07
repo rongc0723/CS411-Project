@@ -1,0 +1,23 @@
+ input {
+    
+    box-sizing: content-box;
+    border-radius: 1rem;
+}
+ .search-box {
+    color:white !important;
+    font-family: Comic Sans MS !important;
+    font-size:large !important;
+    font-style: italic !important;
+    background: linear-gradient(45deg,#FFACAC, #FFBFA9,#FFEBB4) !important;
+    border-color: white !important;
+    transition: background 0.3s ease-in-out !important;
+    margin-top: 0%;
+ }
+
+ .search-box:hover {
+    background: #FFBFA9 !important;
+ }
+ 
+ .search-result:hover {
+    background: #FFBFA9 !important;
+ }

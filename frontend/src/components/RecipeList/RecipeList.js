@@ -12,7 +12,7 @@ const RecipeList = () =>{
   console.log(selectedDish);
 
   return (
-    <Card style={{width: '36rem'}}>
+    <Card style={{width: '25rem'}}>
       <Card.Img variant='top' src={selectedDish.image} sizes='(max-width: 710px) 120px,(max-width: 991px) 193px,278px'></Card.Img>
       <Card.Body>
         <Card.Title>
@@ -21,8 +21,18 @@ const RecipeList = () =>{
       </Card.Body>
       <Card.Text>
         Culture: {selectedDish.cuisines[0]}.
-        {selectedDish.summary}
       </Card.Text>
+      <Accordion>
+        {selectedDish.analyzedInstructions[0].steps.map(instructions => (
+          <Accordion.Item>
+            <Accordion.Header>
+              Step {instructions.number}
+            </Accordion.Header>
+            <Accordion.Body>
+              {instructions.step}
+            </Accordion.Body>
+          </Accordion.Item>))}
+      </Accordion>
     </Card>
   )
 }

@@ -12,7 +12,6 @@ import LoginPage from './pages/Login/LoginPage';
 import MainPage from './pages/MainPage/MainPage';
 import { AuthContextProvider } from './context/AuthContext';
 
-
 function App() {
   return (
     <div className="App">

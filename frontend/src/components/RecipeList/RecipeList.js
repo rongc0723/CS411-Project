@@ -4,6 +4,7 @@ import Accordion from 'react-bootstrap/Accordion'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import CardGroup from 'react-bootstrap/CardGroup'
+import FavoriteButton from '../../components/Favorite/Favorite'
 
 const RecipeList = () =>{
   const urlParams = new URLSearchParams(window.location.search);
@@ -23,8 +24,10 @@ const RecipeList = () =>{
         Culture: {selectedDish.cuisines[0]}.
         {selectedDish.summary}
       </Card.Text>
+      <FavoriteButton/>
     </Card>
   )
+  
 }
 
 

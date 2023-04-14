@@ -25,8 +25,8 @@ app.get('/api/recipes', cors(), async(req, res) => {
 })
 
 app.get('/api/spotify', cors(), async(req, res) => {
-    const SPOTIFY_CLIENT_ID = '2a465f5362034730be5a5391aed23ca3';
-    const SPOTIFY_CLIENT_SECRET = '8d192fa3c1824b349bf3f4615f3b0362';
+    const SPOTIFY_CLIENT_ID = '';
+    const SPOTIFY_CLIENT_SECRET = '';
     const {query} = req.query
     try {
         const response = await axios.post('https://accounts.spotify.com/api/token', null, {

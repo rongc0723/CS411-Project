@@ -24,6 +24,37 @@ app.get('/api/recipes', cors(), async(req, res) => {
     }
 })
 
+app.get('/api/spotify', cors(), async(req, res) => {
+    const SPOTIFY_CLIENT_ID = "2a465f5362034730be5a5391aed23ca3";
+    const SPOTIFY_CLIENT_SECRET = "91465047fe834b1aad115bcc1f9c0379";
+    const {query} = req.query
+    try {
+        const response = await axios.post('https://accounts.spotify.com/api/token', null, {
+            params: {
+                grant_type: 'client_credentials',
+            },
+            headers: {
+                'Authorization': `Basic ${Buffer.from(`${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`).toString('base64')}`,
+                'Content-Type': 'application/x-www-form-urlencoded',
+            }
+        })
+        const access_token = response.data.access_token
+        const params = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + access_token
+            }
+        }
+        const searchResponse = await axios.get(`https://api.spotify.com/v1/search?query=${query}&type=playlist&limit=10` , params)
+        res.json(searchResponse.data)
+    } catch (error) {
+        res.status(500).json({error: 'error'})
+        
+    }
+
+})
+
 app.listen(4000, () => {
     console.log(`listening at http://localhost:4000`)
 })

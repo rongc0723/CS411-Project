@@ -1,0 +1,15 @@
+.result-page {
+  display: flex;
+  background-color: #f6f6f6 ;
+}
+
+.MusicList {
+  float: right;
+  margin-top: 4%;
+}
+
+.RecipeList {
+  float: left;
+  margin-left: 10%;
+  margin-top: 5%;
+}

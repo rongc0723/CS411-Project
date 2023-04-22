@@ -2,6 +2,8 @@ const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
 const app = express();
+const dotenv = require('dotenv');
+dotenv.config();
 app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
@@ -11,7 +13,7 @@ app.get("/", cors(), async(req, res) => {
 })
 
 app.get('/api/recipes', cors(), async(req, res) => {
-    const apiKey = '2f0beac2f4c1420c816e7632d8657317'
+    const apiKey = process.env.MY_SPOONACULAR_API_KEY;
     const {query} = req.query
     console.log('Fetching...')
     const apiUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${query}&addRecipeInformation=true`
@@ -25,8 +27,8 @@ app.get('/api/recipes', cors(), async(req, res) => {
 })
 
 app.get('/api/spotify', cors(), async(req, res) => {
-    const SPOTIFY_CLIENT_ID = '2a465f5362034730be5a5391aed23ca3';
-    const SPOTIFY_CLIENT_SECRET = 'ec8a4cde0c9f4a10aedbb5a165a2eefc';
+    const SPOTIFY_CLIENT_ID = process.env.MY_SPOTIFY_CLIENT_ID;
+    const SPOTIFY_CLIENT_SECRET = process.env.MY_SPOTIFY_CLIENT_SECRET;
     const {query} = req.query
     try {
         const response = await axios.post('https://accounts.spotify.com/api/token', null, {

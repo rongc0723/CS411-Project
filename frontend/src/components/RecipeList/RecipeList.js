@@ -27,7 +27,7 @@ const RecipeList = () =>{
           <Card.Body>
             <Card.Title>
               {selectedDish.title}
-              <FavoriteButton />
+              <FavoriteButton recipeName={selectedDish.title} steps={selectedDish.analyzedInstructions[0].steps} image={selectedDish.image}/>
             </Card.Title>
           </Card.Body>
           <Card.Text>Culture: {selectedDish.cuisines[0]}</Card.Text>

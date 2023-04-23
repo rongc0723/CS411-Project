@@ -62,7 +62,7 @@ function ProfilePage() {
               <Card.Body>
                 <Card.Title>
                   {recipe.title}
-                  <button onClick={() => deleteFavorite(recipe.title)}>delete</button>
+                  <button className="button" onClick={() => deleteFavorite(recipe.title)}>delete</button>
                 </Card.Title>
               </Card.Body>
               <Accordion>

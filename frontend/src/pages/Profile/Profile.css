@@ -2,9 +2,15 @@
     display: inline-block;
     vertical-align: top;
     margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 10%;
   }
 
   .profile-page .favorites{
     display: flex;
     flex-wrap: wrap;
+  }
+
+.button {
+    margin-left: 3%;
   }
